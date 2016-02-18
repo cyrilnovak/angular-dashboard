@@ -1,0 +1,14 @@
+body {
+    background: #2e3138;
+}
+
+nav.navbar.navbar-md.navbar-fixed-top {
+    background: #2e3138;
+    border-top: #f25050 3px solid;
+    border-bottom: #202227 1px solid;
+    color: white;
+}
+
+.btn.callmask {
+    background: #f25050;
+}
