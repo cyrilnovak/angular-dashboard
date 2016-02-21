@@ -19,27 +19,21 @@
 
             // keep user logged in after page refresh
             $rootScope.globals = $cookieStore.get('globals') || {};
-            /*if ($rootScope.globals.currentUser) {
-                $http.defaults.headers.common['Authorization'] = 'Basic ' + $rootScope.globals.currentUser.authdata; 
-                // jshint ignore:line
-            }*/
 
-            $rootScope.$on('$locationChangeStart', function (event, next, current) {
+            /*$rootScope.$on('$locationChangeStart', function (event, next, current) {
                 // redirect to login page if not logged in and trying to access a restricted page
                 var restrictedPage = $.inArray($location.path(), ['/access/signin', '/access/signup']) === -1;
                 var signedIn = $rootScope.globals.currentUser;
                 if (restrictedPage && !signedIn) {
                     $location.path('/access/signin');
                 }
-            });
+            });*/
       }
 
       config.$inject =  ['$httpProvider', '$stateProvider', '$urlRouterProvider', 'MODULE_CONFIG'];
-      function config( $httpProvider, $stateProvider,   $urlRouterProvider,   MODULE_CONFIG ) {
-            
-        /*$httpProvider.defaults.withCredentials = false;
-        delete $httpProvider.defaults.headers.common['X-Requested-With'];
-        $httpProvider.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded; charset=UTF-8';*/
+      function config( $httpProvider, $stateProvider,   $urlRouterProvider,   MODULE_CONFIG ) {            
+        
+        $httpProvider.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded; charset=UTF-8';
         
         var p = getParams('layout'),
             l = p ? p + '.' : '',
@@ -62,8 +56,9 @@
               url: '/dashboard',
               templateUrl: dashboard,
               data : { title: 'Dashboard' },
-              controller: "ChartCtrl",
-              resolve: load(['scripts/controllers/chart.js'])
+              controller: "DashboardCtrl",
+              controllerAs: "vm",
+              resolve: load(['scripts/controllers/dashboard/dashboard.js'])
             })
 
             // applications

@@ -30,6 +30,7 @@
     
     <!-- user defined style -->
     <link rel="stylesheet" href="../assets/styles/style.css" type="text/css" />  
+    <link rel="stylesheet" href="../libs/angular/angular-chart.js/dist/angular-chart.min.css" type="text/css" />  
     
 </head>
 <body ng-app="app" ng-controller="AppCtrl" class="{{app.setting.bg}}" ng-class="{'container': app.setting.boxed, 'ie': isIE,'smart': isSmart}">
@@ -58,6 +59,9 @@
   <script src="../libs/angular/angular-ui-utils/ui-utils.js"></script>
   <!-- lazyload -->
   <script src="../libs/angular/oclazyload/dist/ocLazyLoad.js"></script>
+  <!-- chart.js -->
+  <script src="../libs/angular/Chart.js/Chart.js"></script>
+  <script src="../libs/angular/angular-chart.js/dist/angular-chart.js"></script>
 
 <!-- App -->
   <script src="scripts/app.js"></script>
@@ -80,12 +84,12 @@
   <script src="scripts/services/palette.js"></script>
     
   <!-- User Defined Services -->
-  <script src="scripts/services/authentication/auth.service.js"></script>
-  <script src="scripts/services/authentication/user.service.js"></script>
-  <script src="scripts/services/authentication/user.service.local.storage.js"></script>
+  <script src="scripts/services/authentication/authentication.service.js"></script>
+  <script src="scripts/services/dashboard/dashboard.service.js"></script>
     
   <!-- User Defined Controllers -->
   <script src="scripts/controllers/misc/signin.js"></script>
+  <script src="scripts/controllers/dashboard/dashboard.js"></script>
 <!-- endbuild -->
 </body>
 </html>

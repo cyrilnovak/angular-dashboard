@@ -12,3 +12,9 @@ nav.navbar.navbar-md.navbar-fixed-top {
 .btn.callmask {
     background: #f25050;
 }
+
+div.box-header,
+div.box-tool,
+a.nav-link {
+    color: white;
+}

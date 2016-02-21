@@ -21,6 +21,7 @@
         'ui.utils',
         'ui.load',
         'ui.jp',
-        'oc.lazyLoad'
+        'oc.lazyLoad',
+        'chart.js'
       ]);    
 })();

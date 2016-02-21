@@ -5,31 +5,28 @@
     .controller('SignInCtrl', SignIn);
 
     
-    SignIn.$inject = ['$location', 'AuthenticationService'/*, 'FlashService'*/];
-    function SignIn($location, AuthenticationService/*, FlashService*/) {
+    SignIn.$inject = ['$location', 'AuthenticationService'];
+    function SignIn($location, AuthenticationService) {
         var vm = this;
  
         vm.signin = signin;
         vm.remember = false;
  
-        (function initController() {
-            // reset login status
-            AuthenticationService.ClearCredentials();
-        })();
- 
         function signin() {
-            vm.dataLoading = true;
+            
+            $location.path('/app/dashboard').replace();
+            
+            /*vm.dataLoading = true;
             AuthenticationService.Login(vm.username, vm.password, vm.remember, function (response) {
-                if (response.success) {
-                    AuthenticationService.SetCredentials(vm.username, vm.password);
-                    $location.path('/');
+                if (response.admin_session_key) {
+                    AuthenticationService.SetCredentials(vm.username, response.admin_session_key);
+                    $location.path('/dashboard');
+                    vm.dataLoading = false;
                 } else {
-                    /*FlashService.Error(response.message);*/
+                    console.log(response.message);
                     vm.dataLoading = false;
                 }
-            }, function (error) {
-                vm.dataLoading = false;
-            });
+            });*/
         };
     }
       
