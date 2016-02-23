@@ -10,11 +10,12 @@
         var service = {};
         var vm, scope;    
     
-        var baseUrl = 'https://www.callmask.com/admin/';
+        var baseUrl = 'https://www.callmask.com/admin/users';
         
         service.SetVm = setVm;
         service.GetDtOptions = getDtOptions;
         service.GetDtColumns = getDtColumns;
+        service.UpdateCredits = updateCredits;
         
         return service;
         
@@ -26,23 +27,8 @@
             return DTOptionsBuilder
                 .newOptions()
                 .withBootstrap()
-                /*.withBootstrapOptions({
-                    TableTools: {
-                        classes: {
-                            container: 'btn-group container',
-                            buttons: {
-                                normal: 'btn btn-danger'
-                            }
-                        }
-                    },
-                    ColVis: {
-                        classes: {
-                            masterButton: 'btn btn-primary'
-                        }
-                    }
-                })*/
                 .withOption('ajax', {
-                    url: baseUrl + 'users/',
+                    url: baseUrl,
                     type: 'GET',
                     data: function(data, dtInstance) {
                         
@@ -73,6 +59,19 @@
         
         function rowCallback(nRow, aData, iDisplayIndex, iDisplayIndexFull) {            
             return vm.RowNClicked(nRow, aData);
+        }
+        
+        function updateCredits(data, callback) {            
+            var url = baseUrl + '/' + data.id ;
+            console.log(Number(data.credits));
+            var params = $.param({'credits': Number(data.credits)});
+            
+            $http.put(url, params).success(
+                function(response) {
+                    console.log(response);
+                    callback(response);
+                }
+            );
         }
     }
     

@@ -1,2 +1,40 @@
 <!-- only need a height for layout 4 -->
-<div style="min-height: 200px"></div>
+<div class="container">
+    <form>
+        <div class="box">            
+            <div class="box-body">                    
+                <div class="form-group row">
+                    <label class="col-sm-3 form-control-label dark">ID</label>
+                    <label class="col-sm-9 form-control-label dark-border">&nbsp;{{vm.userData.id}}</label>   
+                    <label class="col-sm-3 form-control-label dark">Phone number</label>
+                    <label class="col-sm-9 form-control-label dark-border">&nbsp;{{vm.userData.phone_number}}</label>     
+                    <label class="col-sm-3 form-control-label dark">Device</label>
+                    <label class="col-sm-9 form-control-label dark-border">&nbsp;{{vm.userData.device}}</label>  
+                    <label class="col-sm-3 form-control-label dark">App version</label>
+                    <label class="col-sm-9 form-control-label dark-border">&nbsp;{{vm.userData.app_version}}</label>  
+                    <label class="col-sm-3 form-control-label dark">Platform</label>
+                    <label class="col-sm-9 form-control-label dark-border">&nbsp;{{vm.userData.platform}}</label>  
+                    <label class="col-sm-3 form-control-label dark">Platform version</label>
+                    <label class="col-sm-9 form-control-label dark-border">&nbsp;{{vm.userData.platform_version}}</label>  
+                    <label class="col-sm-3 form-control-label dark">Credits</label>
+                    <label class="col-sm-9 form-control-label dark-border">&nbsp;{{vm.userData.credits}}</label>   
+                    <label class="col-sm-3 form-control-label dark">Created at</label>
+                    <label class="col-sm-9 form-control-label dark-border">&nbsp;{{vm.userData.created_at}}</label>  
+                    <label class="col-sm-3 form-control-label dark">Deleted</label>
+                    <label class="col-sm-9 form-control-label dark-border">&nbsp;{{vm.userData.deleted}}</label>        
+                    <span class="col-sm-12 form-control-label dark-border empty"></span>        
+                </div>
+
+                <div class="form-group row">     
+                    <label class="col-sm-9 form-control-label text-right">Credits</label>               
+                    <div class="input-group col-sm-3">
+                        <input type="text" class="form-control" ng-model="vm.userData.credits">
+                        <span class="input-group-btn">
+                            <button class="btn dark" type="button" ng-click="vm.UpdateCredits()">Done</button>
+                        </span>
+                    </div>
+                </div>  
+            </div>
+        </div>
+    </form>
+</div>

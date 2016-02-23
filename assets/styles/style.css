@@ -2,6 +2,10 @@ body {
     background: #2e3138;
 }
 
+.dark {    
+    background: #3D3D3D;
+}
+
 nav.navbar.navbar-md.navbar-fixed-top {
     background: #2e3138;
     border-top: #f25050 3px solid;
@@ -21,6 +25,23 @@ a.nav-link {
 
 label.ui-switch.ui-switch-sm {
     margin-top: 5px;
+}
+
+.form-control-label.dark {
+    background: #2E485F;
+    border: 1px solid #2E485F;
+    border-bottom: 0;
+}
+
+.form-control-label.dark-border {
+    border: 1px solid #2E485F;
+    border-bottom: 0;
+}
+
+.form-control-label.dark-border.empty {
+    border: 1px solid #2E485F;
+    border-bottom: 0;
+    padding: 0;
 }
 
 table.dt-table>thead {
