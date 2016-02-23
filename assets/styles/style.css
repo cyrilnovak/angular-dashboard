@@ -18,3 +18,7 @@ div.box-tool,
 a.nav-link {
     color: white;
 }
+
+label.ui-switch.ui-switch-sm {
+    margin-top: 5px;
+}

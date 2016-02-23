@@ -60,6 +60,22 @@
               controllerAs: "vm",
               resolve: load(['scripts/controllers/dashboard/dashboard.js'])
             })
+            .state('app.users', {
+              url: '/users',
+              templateUrl: '../views/users/users.html',
+              data : { title: 'Users' },
+              controller: "UsersCtrl",
+              controllerAs: "vm",
+              resolve: load(['scripts/controllers/users/users.js'])
+            })
+            .state('app.users.userdetails', {
+              url: '/users/{id}',
+              templateUrl: '../views/users/user_details.html',
+              data : { title: 'User Details' },
+              controller: "DashboardCtrl",
+              controllerAs: "vm",
+              resolve: load(['scripts/controllers/dashboard/dashboard.js'])
+            })
 
             // applications
 

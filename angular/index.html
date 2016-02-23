@@ -31,6 +31,7 @@
     <!-- user defined style -->
     <link rel="stylesheet" href="../assets/styles/style.css" type="text/css" />  
     <link rel="stylesheet" href="../libs/angular/angular-chart.js/dist/angular-chart.min.css" type="text/css" />  
+    <link rel="stylesheet" href="../libs/angular/angular-datatables/dist/plugins/bootstrap/datatables.bootstrap.css" type="text/css" />  
     
 </head>
 <body ng-app="app" ng-controller="AppCtrl" class="{{app.setting.bg}}" ng-class="{'container': app.setting.boxed, 'ie': isIE,'smart': isSmart}">
@@ -42,6 +43,7 @@
   <script src="../libs/jquery/tether/dist/js/tether.min.js"></script>
   <script src="../libs/jquery/bootstrap/dist/js/bootstrap.js"></script>
   <script src="../libs/jquery/PACE/pace.min.js"></script>
+  <script src="../libs/jquery/datatables/media/js/jquery.dataTables.js"></script>
 <!-- Angular -->
   <script src="../libs/angular/angular/angular.js"></script>
   <script src="../libs/angular/angular-animate/angular-animate.js"></script>
@@ -50,6 +52,8 @@
   <script src="../libs/angular/angular-touch/angular-touch.js"></script>
   <script src="../libs/angular/angular-cookies/angular-cookies.js"></script>
   <script src="../libs/angular/angular-loader/angular-loader.js"></script>
+  <script src="../libs/angular/angular-datatables/dist/angular-datatables.js"></script>
+  <script src="../libs/angular/angular-datatables/dist/plugins/bootstrap/angular-datatables.bootstrap.js"></script>
 
   <!-- router -->
   <script src="../libs/angular/angular-ui-router/release/angular-ui-router.js"></script>
@@ -86,10 +90,12 @@
   <!-- User Defined Services -->
   <script src="scripts/services/authentication/authentication.service.js"></script>
   <script src="scripts/services/dashboard/dashboard.service.js"></script>
+  <script src="scripts/services/users/users.service.js"></script>
     
   <!-- User Defined Controllers -->
   <script src="scripts/controllers/misc/signin.js"></script>
   <script src="scripts/controllers/dashboard/dashboard.js"></script>
+  <script src="scripts/controllers/users/users.js"></script>
 <!-- endbuild -->
 </body>
 </html>

@@ -47,11 +47,6 @@
             );
             
         }
-        
-        function initRevenueGraph() {
-            var ret = {};
-            return ret;
-        }
     }
     
 })();

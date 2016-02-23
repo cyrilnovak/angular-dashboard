@@ -22,6 +22,8 @@
         'ui.load',
         'ui.jp',
         'oc.lazyLoad',
-        'chart.js'
+        'chart.js',
+        'datatables',
+        'datatables.bootstrap'
       ]);    
 })();

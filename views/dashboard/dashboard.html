@@ -30,11 +30,14 @@
         <div class="col-sm-6 col-xs-12">
             <div class="box">
                 <div class="box-header" style="background: #2E485F">
-                    <!--h3 ng-bind="vm.dailyTitle"></h3-->
                     <h3>{{vm.titles[vm.dailyCategory]}}</h3>
                 </div>
+                
                 <div class="box-tool">
-                    <ul class="nav">
+                    <ul class="nav">                    
+                        <li class="nav-item inline">                                                          
+                            
+                        </li>
                         <li class="nav-item inline">
                             <a class="nav-link">
                                 <i class="material-icons md-18">&#xe863;</i>
@@ -54,7 +57,7 @@
                     </ul>
                 </div>
                 <div class="box-body">
-                    <div class="text-center m-b">
+                    <div class="text-left m-b">
                         <div class="btn-group" data-toggle="buttons">
                             <label class="btn btn-sm white" ng-click="vm.ChangeDailyCategory('today')">
                                 <input type="radio" name="dailyRevenue" autocomplete="off"> Today
@@ -62,6 +65,17 @@
                             <label class="btn btn-sm white" ng-click="vm.ChangeDailyCategory('yesterday')">
                                 <input type="radio" name="dailyRevenue" autocomplete="off"> Yesterday
                             </label>
+                        </div>    
+                        <div class="form-group row dark text-white" style="background:#2E485F">
+                            <label class="col-md-10 col-lg-11 form-control-label">{{vm.titles[vm.dailyCategory]}}</label>
+                            <div class="col-md-2 col-lg-1">
+                                <label class="ui-switch ui-switch-md dark m-t-xs m-r">
+                                    <input type="checkbox" 
+                                       ng-checked="(vm.dailyCategory !== 'today')"
+                                       ng-click="vm.ChangeDailyCategory()" >
+                                    <i></i>
+                                </label>
+                            </div>
                         </div>
                     </div>
                     <ul style="list-style:none;padding:0">

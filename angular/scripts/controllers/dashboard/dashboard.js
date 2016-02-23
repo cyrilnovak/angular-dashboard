@@ -152,8 +152,11 @@
         }
         
         function changeDailyCategory(category) {
+            
+            var tmpKey = category ? category : vm.dailyCategory; 
+            var invFlag = category ? true : false;
                         
-            if (category !== 'today') {                
+            if ((tmpKey !== 'today') === invFlag) {                
                 vm.dailyCategory = 'yesterday';                                
             } else {                                
                 vm.dailyCategory = 'today';                
@@ -164,7 +167,10 @@
         
         function changeMonthCategory(category) {
             
-            if (category !== 'current') {                
+            var tmpKey = category ? category : vm.monthCategory; 
+            var invFlag = category ? true : false;
+            
+            if ((tmpKey !== 'current') === invFlag) {                
                 vm.monthCategory = 'last_month';                
             } else {                                
                 vm.monthCategory = 'current_month';
