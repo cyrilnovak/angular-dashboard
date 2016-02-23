@@ -22,3 +22,8 @@ a.nav-link {
 label.ui-switch.ui-switch-sm {
     margin-top: 5px;
 }
+
+table.dt-table>thead {
+    color: white;
+    background: #2E485F;
+}

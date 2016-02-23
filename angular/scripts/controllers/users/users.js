@@ -9,9 +9,11 @@
     function Users($location, $resource, UsersService) {
         var vm = this;        
         
-        vm.dtOptions = UsersService.GetDtOptionsWithBootstrap();   
+        vm.dtOptions = UsersService.GetDtOptions();   
+        vm.dtColumns = UsersService.GetDtColumns();   
+        //vm.dtOptions = UsersService.GetDtOptionsWithBootstrap();   
                 
-        vm.GetUsers = getUsers;             
+        /*vm.GetUsers = getUsers;             
         
         (function initController() {
             // reset  
@@ -28,6 +30,6 @@
                 for (var dt in vm.dtData)
                     console.log(vm.dtData[dt]);
             }
-        };
+        };*/
     }
 })();
