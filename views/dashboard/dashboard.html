@@ -57,7 +57,7 @@
                     </ul>
                 </div>
                 <div class="box-body">
-                    <div class="text-left m-b">
+                    <div class="text-center m-b">
                         <div class="btn-group" data-toggle="buttons">
                             <label class="btn btn-sm white" ng-click="vm.ChangeDailyCategory('today')">
                                 <input type="radio" name="dailyRevenue" autocomplete="off"> Today
@@ -66,7 +66,7 @@
                                 <input type="radio" name="dailyRevenue" autocomplete="off"> Yesterday
                             </label>
                         </div>    
-                        <div class="form-group row dark text-white" style="background:#2E485F">
+                        <!--div class="form-group row dark text-white" style="background:#2E485F">
                             <label class="col-md-10 col-lg-11 form-control-label">{{vm.titles[vm.dailyCategory]}}</label>
                             <div class="col-md-2 col-lg-1">
                                 <label class="ui-switch ui-switch-md dark m-t-xs m-r">
@@ -76,7 +76,7 @@
                                     <i></i>
                                 </label>
                             </div>
-                        </div>
+                        </div-->
                     </div>
                     <ul style="list-style:none;padding:0">
                         <li>
@@ -248,16 +248,6 @@
                             <a class="nav-link" data-toggle="dropdown">
                                 <i class="material-icons md-18">&#xe5d4;</i>
                             </a>
-                            <div class="dropdown-menu dropdown-menu-scale pull-right">
-                                <a class="dropdown-item" href 
-                                   ng-click="vm.userCountCategory = 'today';">Today</a>
-                                <a class="dropdown-item" href
-                                   ng-click="vm.userCountCategory = 'yesterday';">Yesterday</a>
-                                <a class="dropdown-item" href
-                                   ng-click="vm.userCountCategory = 'current_month';">Current month</a>
-                                <a class="dropdown-item" href
-                                   ng-click="vm.userCountCategory = 'last_month';">Last month</a>
-                            </div>
                         </li>
                     </ul>
                 </div>
@@ -266,16 +256,16 @@
                         <h3> {{vm.titles[vm.userCountCategory]}} </h3>    
                         
                         <div class="btn-group" data-toggle="buttons">
-                            <label class="btn btn-sm white" ng-click="vm.userCountCategory = 'today';">
+                            <label class="btn btn-xs white" ng-click="vm.userCountCategory = 'today';">
                                 <input type="radio" name="dailyRevenue" autocomplete="off"> Today
                             </label>
-                            <label class="btn btn-sm white" ng-click="vm.userCountCategory = 'yesterday';">
+                            <label class="btn btn-xs white" ng-click="vm.userCountCategory = 'yesterday';">
                                 <input type="radio" name="dailyRevenue" autocomplete="off"> Yesterday
                             </label>
-                            <label class="btn btn-sm white" ng-click="vm.userCountCategory = 'current_month';">
-                                <input type="radio" name="dailyRevenue" autocomplete="off"> Current month
+                            <label class="btn btn-xs white" ng-click="vm.userCountCategory = 'current_month';">
+                                <input type="radio" name="dailyRevenue" autocomplete="off"> This month
                             </label>
-                            <label class="btn btn-sm white" ng-click="vm.userCountCategory = 'last_month';">
+                            <label class="btn btn-xs white" ng-click="vm.userCountCategory = 'last_month';">
                                 <input type="radio" name="dailyRevenue" autocomplete="off"> Last month
                             </label>
                         </div> 
@@ -309,20 +299,25 @@
                             <a class="nav-link" data-toggle="dropdown">
                                 <i class="material-icons md-18">&#xe5d4;</i>
                             </a>
-                            <div class="dropdown-menu dropdown-menu-scale pull-right">
-                                <a class="dropdown-item" href 
-                                   ng-click="vm.inventoryCategory = 'total';">Total inventory count</a>
-                                <a class="dropdown-item" href 
-                                   ng-click="vm.inventoryCategory = 'available';">Inventory available count</a>
-                                <a class="dropdown-item" href 
-                                   ng-click="vm.inventoryCategory = 'cooling';">Inventory cooling count</a>
-                            </div>
                         </li>
                     </ul>
                 </div>
                 <div class="box-body">
                     <div class="text-center">
                         <h3> {{vm.titles1[vm.inventoryCategory]}} </h3>
+                        
+                        <div class="btn-group" data-toggle="buttons">
+                            <label class="btn btn-xs white" ng-click="vm.inventoryCategory = 'total';">
+                                <input type="radio" name="dailyRevenue" autocomplete="off"> Total
+                            </label>
+                            <label class="btn btn-xs white" ng-click="vm.inventoryCategory = 'available';">
+                                <input type="radio" name="dailyRevenue" autocomplete="off"> Available
+                            </label>
+                            <label class="btn btn-xs white" ng-click="vm.inventoryCategory = 'cooling';">
+                                <input type="radio" name="dailyRevenue" autocomplete="off"> Cooling
+                            </label>
+                        </div> 
+                        
                         <h1>{{vm.dashboard['inventory'][vm.inventoryCategory]}}</h1>
                     </div>
                 </div>
@@ -339,22 +334,28 @@
                             <a class="nav-link" data-toggle="dropdown">
                                 <i class="material-icons md-18">&#xe5d4;</i>
                             </a>
-                            <div class="dropdown-menu dropdown-menu-scale pull-right">
-                                <a class="dropdown-item" href 
-                                   ng-click="vm.messagesCategory = 'today';">Today</a>
-                                <a class="dropdown-item" href 
-                                   ng-click="vm.messagesCategory = 'yesterday';">Yesterday</a>
-                                <a class="dropdown-item" href 
-                                   ng-click="vm.messagesCategory = 'current_month';">Current month</a>
-                                <a class="dropdown-item" href 
-                                   ng-click="vm.messagesCategory = 'last_month';">Last month</a>
-                            </div>
                         </li>
                     </ul>
                 </div>
                 <div class="box-body">
                     <div class="text-center">
-                        <h3> {{vm.titles[vm.messagesCategory]}} </h3>
+                        <h3> {{vm.titles[vm.messagesCategory]}} </h3>    
+                        
+                        <div class="btn-group" data-toggle="buttons">
+                            <label class="btn btn-xs white" ng-click="vm.messagesCategory = 'today';">
+                                <input type="radio" name="dailyRevenue" autocomplete="off"> Today
+                            </label>
+                            <label class="btn btn-xs white" ng-click="vm.messagesCategory = 'yesterday';">
+                                <input type="radio" name="dailyRevenue" autocomplete="off"> Yesterday
+                            </label>
+                            <label class="btn btn-xs white" ng-click="vm.messagesCategory = 'current_month';">
+                                <input type="radio" name="dailyRevenue" autocomplete="off"> This month
+                            </label>
+                            <label class="btn btn-xs white" ng-click="vm.messagesCategory = 'last_month';">
+                                <input type="radio" name="dailyRevenue" autocomplete="off"> Last month
+                            </label>
+                        </div> 
+                        
                         <h1>{{vm.dashboard['messages'][vm.messagesCategory]}}</h1>
                     </div>
                 </div>
@@ -371,22 +372,28 @@
                             <a class="nav-link" data-toggle="dropdown">
                                 <i class="material-icons md-18">&#xe5d4;</i>
                             </a>
-                            <div class="dropdown-menu dropdown-menu-scale pull-right">
-                                <a class="dropdown-item" href 
-                                   ng-click="vm.callsCategory = 'today';">Today</a>
-                                <a class="dropdown-item" href 
-                                   ng-click="vm.callsCategory = 'yesterday';">Yesterday</a>
-                                <a class="dropdown-item" href 
-                                   ng-click="vm.callsCategory = 'current_month';">Current month</a>
-                                <a class="dropdown-item" href 
-                                   ng-click="vm.callsCategory = 'last_month';">Last month</a>
-                            </div>
                         </li>
                     </ul>
                 </div>
                 <div class="box-body">
                     <div class="text-center">
-                        <h3> {{vm.titles[vm.callsCategory]}} </h3>
+                        <h3> {{vm.titles[vm.callsCategory]}} </h3> 
+                        
+                        <div class="btn-group" data-toggle="buttons">
+                            <label class="btn btn-xs white" ng-click="vm.callsCategory = 'today';">
+                                <input type="radio" name="dailyRevenue" autocomplete="off"> Today
+                            </label>
+                            <label class="btn btn-xs white" ng-click="vm.callsCategory = 'yesterday';">
+                                <input type="radio" name="dailyRevenue" autocomplete="off"> Yesterday
+                            </label>
+                            <label class="btn btn-xs white" ng-click="vm.callsCategory = 'current_month';">
+                                <input type="radio" name="dailyRevenue" autocomplete="off"> This month
+                            </label>
+                            <label class="btn btn-xs white" ng-click="vm.callsCategory = 'last_month';">
+                                <input type="radio" name="dailyRevenue" autocomplete="off"> Last month
+                            </label>
+                        </div> 
+                        
                         <h1>{{vm.dashboard['calls'][vm.callsCategory]}}</h1>
                     </div>
                 </div>
