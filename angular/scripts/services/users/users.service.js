@@ -63,10 +63,11 @@
         
         function updateCredits(data, callback) {            
             var url = baseUrl + '/' + data.id ;
-            console.log(Number(data.credits));
-            var params = $.param({'credits': Number(data.credits)});
+            var credits = Number(data.credits);
+            var params = $.param({'credits': credits});
+            var config = {'headers': {'Content-Type': 'application/x-www-form-urlencoded'}};
             
-            $http.put(url, params).success(
+            $http.put(url, params, config).success(
                 function(response) {
                     console.log(response);
                     callback(response);
