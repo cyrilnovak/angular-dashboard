@@ -5,31 +5,30 @@
     .controller('UsersCtrl', Users);
 
     
-    Users.$inject = ['$location', '$resource', 'UsersService'];
-    function Users($location, $resource, UsersService) {
+    Users.$inject = ['$location', '$scope', 'UsersService'];
+    function Users($location, $scope, UsersService) {
         var vm = this;        
         
         vm.dtOptions = UsersService.GetDtOptions();   
-        vm.dtColumns = UsersService.GetDtColumns();   
-        //vm.dtOptions = UsersService.GetDtOptionsWithBootstrap();   
-                
-        /*vm.GetUsers = getUsers;             
+        vm.dtColumns = UsersService.GetDtColumns();     
         
+        vm.RowNClicked = rowNClicked;
+                        
         (function initController() {
             // reset  
-            vm.GetUsers();
+            UsersService.SetVm(vm);
         })();
- 
-        function getUsers(data) {
-            if (!data) {
-                vm.dataLoading = true;
-                UsersService.GetUsers(vm.GetUsers);
-            } else {
-                vm.dataLoading = false;
-                vm.dtData = data;
-                for (var dt in vm.dtData)
-                    console.log(vm.dtData[dt]);
-            }
-        };*/
+        
+        function rowNClicked(row, info) {
+            //console.log('row: ', row, info);
+            $('td', row).unbind('click');
+            $('td', row).bind('click', function() {
+                $scope.$apply(function() {
+                    console.log('row applied: ', row, info);
+                    vm.isEditing = true;
+                });
+            });
+            return row;
+        }
     }
 })();

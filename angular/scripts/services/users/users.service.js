@@ -8,17 +8,25 @@
     UsersService.$inject = ['$http', 'DTOptionsBuilder', 'DTColumnBuilder'];
     function UsersService($http, DTOptionsBuilder, DTColumnBuilder) {
         var service = {};
+        var vm, scope;    
+    
         var baseUrl = 'https://www.callmask.com/admin/';
         
+        service.SetVm = setVm;
         service.GetDtOptions = getDtOptions;
         service.GetDtColumns = getDtColumns;
+        
         return service;
         
+        function setVm(inst) {
+            vm = inst;
+        }
+                    
         function getDtOptions() {
             return DTOptionsBuilder
                 .newOptions()
                 .withBootstrap()
-                .withBootstrapOptions({
+                /*.withBootstrapOptions({
                     TableTools: {
                         classes: {
                             container: 'btn-group container',
@@ -32,7 +40,7 @@
                             masterButton: 'btn btn-primary'
                         }
                     }
-                })
+                })*/
                 .withOption('ajax', {
                     url: baseUrl + 'users/',
                     type: 'GET',
@@ -44,6 +52,8 @@
                 .withDataProp('data')
                 .withOption('processing', true)
                 .withOption('serverSide', true)
+                .withOption('responsive', true)
+                .withOption('rowCallback', rowCallback)
                 .withPaginationType('full_numbers');
         }
                 
@@ -59,44 +69,11 @@
                     DTColumnBuilder.newColumn('created_at').withTitle('Created at'),
                     DTColumnBuilder.newColumn('deleted').withTitle('Deleted')
                 ];
+        }      
+        
+        function rowCallback(nRow, aData, iDisplayIndex, iDisplayIndexFull) {            
+            return vm.RowNClicked(nRow, aData);
         }
-        
-        /*service.GetUsers = getUsers;
-        service.GetDtOptionsWithBootstrap = getDtOptionsWithBootstrap;
-        
-        return service;
-        
-        function getDtOptionsWithBootstrap() {
-            console.log('DTOptions loaded!');
-            return DTOptionsBuilder
-                .newOptions()
-                .withBootstrap()
-                .withBootstrapOptions({
-                    TableTools: {
-                        classes: {
-                            container: 'btn-group container',
-                            buttons: {
-                                normal: 'btn btn-danger'
-                            }
-                        }
-                    },
-                    ColVis: {
-                        classes: {
-                            masterButton: 'btn btn-primary'
-                        }
-                    }
-                });
-        }
-        
-        function getUsers(callback) {
-            var url = baseUrl + 'users/';
-            
-            $http.get(url).success(
-                function(response) {
-                    callback(response);
-                }
-            );
-        }*/
     }
     
 })();

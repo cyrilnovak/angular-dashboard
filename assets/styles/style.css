@@ -27,3 +27,44 @@ table.dt-table>thead {
     color: white;
     background: #2E485F;
 }
+
+.pagination>.active>a {
+    background: #2E485F !important;
+    border-color: #2E485F !important;
+}
+
+table.dt-table tbody tr.even:hover, table.dt-table tbody tr.even td.highlighted,
+table.dt-table tbody tr.odd:hover, table.dt-table tbody tr.odd td.highlighted {
+    color: white;
+	background-color: #627B91;
+	border-color: #627B91;
+	transition: 0.1s linear all;
+    -webkit-transition: 0.1s linear all; 
+    -moz-transition: 0.1s linear all; 
+    -ms-transition: 0.1s linear all; 
+    -o-transition: 0.1s linear all; 
+}
+
+.animate-enter, 
+.animate-leave
+{ 
+    -webkit-transition: 300ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+    -moz-transition: 300ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+    -ms-transition: 300ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+    -o-transition: 300ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+    transition: 300ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+} 
+ 
+.animate-enter {
+    left: 100%;
+}
+.animate-enter.animate-enter-active {
+    left: 0;
+}
+ 
+.animate-leave {
+    left: 0;
+}
+.animate-leave.animate-leave-active{
+    left: -100%;
+}
