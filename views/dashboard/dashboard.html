@@ -264,6 +264,21 @@
                 <div class="box-body">
                     <div class="text-center">
                         <h3> {{vm.titles[vm.userCountCategory]}} </h3>    
+                        
+                        <div class="btn-group" data-toggle="buttons">
+                            <label class="btn btn-sm white" ng-click="vm.userCountCategory = 'today';">
+                                <input type="radio" name="dailyRevenue" autocomplete="off"> Today
+                            </label>
+                            <label class="btn btn-sm white" ng-click="vm.userCountCategory = 'yesterday';">
+                                <input type="radio" name="dailyRevenue" autocomplete="off"> Yesterday
+                            </label>
+                            <label class="btn btn-sm white" ng-click="vm.userCountCategory = 'current_month';">
+                                <input type="radio" name="dailyRevenue" autocomplete="off"> Current month
+                            </label>
+                            <label class="btn btn-sm white" ng-click="vm.userCountCategory = 'last_month';">
+                                <input type="radio" name="dailyRevenue" autocomplete="off"> Last month
+                            </label>
+                        </div> 
                                 
                         <ul class="text-left" style="list-style:none;padding:0">
                             <li>    
